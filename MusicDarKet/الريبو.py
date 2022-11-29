@@ -30,8 +30,7 @@ async def restart(client, m: Message):
     await loli.edit("7")
     await loli.edit("8")
     await loli.edit("9")
-    await loli.edit("**𓆩 𝗭𝗔𝗜𝗗𝗛𝗢𝗡𓅛 
-("** •⎆┊تـم اعـادة تشغيـل السـورس بنجــاح 🧸♥️ **")
+    await loli.edit("**𓆩•⎆┊تـم اعـادة تشغيـل السـورس بنجــاح 🧸♥️ **")
     os.execl(sys.executable, sys.executable, *sys.argv)
     quit()
 @Client.on_message(filters.command(["الاوامر"], prefixes=f"{HNDLR}"))
