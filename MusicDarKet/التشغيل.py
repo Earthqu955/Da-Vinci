@@ -92,9 +92,9 @@ async def play(client, m: Message):
                 await m.reply_photo(
                     photo="https://telegra.ph/file/40c0ab31719a780e37b5c.jpg",
                     caption=f"""
-**🏷️ العنوان : [{songname}]({link})
-💬 ايدي المحادثه : {chat_id}
-🎧 طلب من : {m.from_user.mention}**
+**❤️‍🔥 𓏺اެݪعَنِۅٛاެنِ : [{songname}]({link})
+❤️‍🔥 𓏺اެيَدَيَ اެݪمِحِادَثَة : {chat_id}
+❤️‍🔥 𓏺طَݪبَ مِنِ اެݪكَيَ : {m.from_user.mention}**
 """,                )
             else:
                 await call_py.join_group_call(                    chat_id,                    AudioPiped(                        dl,                    ),                    stream_type=StreamType().pulse_stream,                )
@@ -103,21 +103,21 @@ async def play(client, m: Message):
                 await m.reply_photo(
                     photo="https://telegra.ph/file/40c0ab31719a780e37b5c.jpg",
                     caption=f"""
-**🏷️ العنوان : [{songname}]({link})
-💬 ايدي المحادثه : {chat_id}
-🎧 طلب من : {m.from_user.mention}**
+**❤️‍🔥 𓏺اެݪعَنِۅٛاެنِ : [{songname}]({link})
+❤️‍🔥 𓏺اެيَدَيَ اެݪمِحِادَثَة : {chat_id}
+❤️‍🔥 𓏺طَݪبَ مِنِ اެݪكَيَ : {m.from_user.mention}**
 """,                )
 
     else:
         if len(m.command) < 2:
-            await m.reply("الرد على ملف صوتي أو إعطاء شيء للبحث")
+            await m.reply("𓏺اެݪࢪدَ عَݪى مِݪفَ صِۅٛتَيَ اެۅٛ اެعَطَاެء شِيَء ݪݪبَحِثَ ❤️‍🔥")
         else:
             await m.delete()
-            huehue = await m.reply("🔎 جاري البحث عزيزي ")
+            huehue = await m.reply(" 𓏺جَـاެࢪيَ اެݪبَحِـثَ ❤️‍🔥 ")
             query = m.text.split(None, 1)[1]
             search = ytsearch(query)
             if search == 0:
-                await huehue.edit("لم يتم العثور على شيء ")
+                await huehue.edit("𓏺ݪمِ يَتَمِ اެݪعَثَۅٛࢪ عَݪى اެݪفَنِاެنِ اެࢪسِݪ اެسِمِ اެݪفَنِاެنِ بَشِكَݪ صِحِيَحِ ❤️‍🔥. ")
             else:
                 songname = search[0]
                 url = search[1]
@@ -133,10 +133,10 @@ async def play(client, m: Message):
                         await m.reply_photo(
                             photo=f"{thumbnail}",
                             caption=f"""
-**🏷️  العنوان : [{songname}]({url})
-⏱️ مده المقطع : {duration}
-💬 ايدي المحادثه : {chat_id}
-🎧 طلب من : {m.from_user.mention}**
+**❤️‍🔥  𓏺اެݪعَنِۅٛاެنِ : [{songname}]({url})
+𓏺مِـدَة اެݪفَيَدَيَۅٛ 🤺 : {duration}
+❤️‍🔥 𓏺اެيَدَيَ اެݪمِحِادَثَة : {chat_id}
+❤️‍🔥 𓏺طَݪبَ مِنِ اެݪكَيَ : {m.from_user.mention}**
 """,
                         )
                     else:
@@ -154,17 +154,17 @@ async def play(client, m: Message):
                             await m.reply_photo(
                                 photo=f"{thumbnail}",
                                 caption=f"""
-**🏷️  العنوان : [{songname}]({url})
-⏱️ مده المقطع : {duration}
-💬 ايدي المحادثه : {chat_id}
-🎧 طلب من : {m.from_user.mention}**
+**❤️‍🔥  𓏺اެݪعَنِۅٛاެنِ : [{songname}]({url})
+𓏺مِـدَة اެݪفَيَدَيَۅٛ 🤺 : {duration}
+𓏺اެيَدَيَ اެݪمِحِادَثَة : {chat_id}
+❤️‍🔥 𓏺طَݪبَ مِنِ اެݪكَيَ : {m.from_user.mention}**
 """,
                             )
                         except Exception as ep:
                             await huehue.edit(f"`{ep}`")
 
 
-@Client.on_message(filters.command(["تشغيل_فيديو"], prefixes=f"{HNDLR}"))
+@Client.on_message(filters.command(["ش فيديو"], prefixes=f"{HNDLR}"))
 async def vplay(client, m: Message):
     replied = m.reply_to_message
     chat_id = m.chat.id
@@ -197,9 +197,9 @@ async def vplay(client, m: Message):
                 await m.reply_photo(
                     photo="https://telegra.ph/file/40c0ab31719a780e37b5c.jpg",
                     caption=f"""
-**🏷️ العنوان : [{songname}]({link})
-💬 ايدي المحادثه : {chat_id}
-🎧 طلب من : {m.from_user.mention}**
+**❤️‍🔥 𓏺اެݪعَنِۅٛاެنِ : [{songname}]({link})
+❤️‍🔥 𓏺اެيَدَيَ اެݪمِحِدَثَة : {chat_id}
+🤺 𓏺طَݪبَ مِنِ اެݪكَيَ : {m.from_user.mention}**
 """,
                 )
             else:
@@ -220,9 +220,9 @@ async def vplay(client, m: Message):
                 await m.reply_photo(
                     photo="https://telegra.ph/file/40c0ab31719a780e37b5c.jpg",
                     caption=f"""
-**🏷️ العنوان : [{songname}]({link})
-💬 ايدي المحادثه : {chat_id}
-🎧 طلب من : {m.from_user.mention}**
+**❤️‍🔥 𓏺اެݪعَنِۅٛاެنِ : [{songname}]({link})
+🤺 𓏺اެيَدَيَ اެݪمِحِدَثَة : {chat_id}
+❤️‍🔥 𓏺طَݪبَ مِنِ اެݪكَيَ : {m.from_user.mention}**
 """,                )
 
     else:
@@ -252,10 +252,10 @@ async def vplay(client, m: Message):
                         await m.reply_photo(
                             photo=f"{thumbnail}",
                             caption=f"""
-**🏷️  العنوان : [{songname}]({url})
-⏱️ مده المقطع : {duration}
-💬 ايدي المحادثه : {chat_id}
-🎧 طلب من : {m.from_user.mention}**
+**🤺  𓏺اެݪعَنِۅٛاެنِ : [{songname}]({url})
+ 𓏺مِـدَة اެݪفَيَدَيَۅٛ 🤺 : {duration}
+ ❤️‍🔥𓏺اެيَدَيَ اެݪمِحِدَثَة : {chat_id}
+𓏺طَݪبَ مِنِ اެݪكَيَ ❤️‍🔥 : {m.from_user.mention}**
 """,                        )
                     else:
                         try:
@@ -265,10 +265,10 @@ async def vplay(client, m: Message):
                             await m.reply_photo(
                                 photo=f"{thumbnail}",
                                 caption=f"""
-**🏷️  العنوان : [{songname}]({url})
-⏱️ مده المقطع : {duration}
-💬 ايدي المحادثه : {chat_id}
-🎧 طلب من : {m.from_user.mention}**
+**  𓏺اެݪعَنِۅٛاެنِ : [{songname}]({url})
+ 𓏺مِـدَة اެݪفَيَدَيَۅٛ 🤺 : {duration}
+𓏺اެيَدَيَ اެݪمِحِدَثَة : {chat_id}
+𓏺طَݪبَ مِنِ اެݪكَيَ : {m.from_user.mention}**
 """,                            )
                         except Exception as ep:
                             await huehue.edit(f"`{ep}`")
@@ -306,10 +306,10 @@ async def playfrom(client, m: Message):
                     await m.reply_photo(
                         photo="https://telegra.ph/file/40c0ab31719a780e37b5c.jpg",
                         caption=f"""
-**▶ ابدأ تشغيل الأغاني من {chat}
-🏷️ العنوان : [{songname}]({link})
-💬 المحادثه : {chat_id}
-🎧 من الطلب : {m.from_user.mention}**
+**𓏺تَمِ تَشِغِيَݪ اެݪاެغِنِيَـة عَبَـࢪ سِيَࢪفَـࢪ @Z5ZZ8 ❤️‍🔥 {chat}
+𓏺اެݪعَنِۅٛاެنِ : [{songname}]({link})
+𓏺اެيَدَيَ اެݪمِحِدَثَة : {chat_id}
+𓏺طَݪبَ مِنِ اެݪكَيَ : {m.from_user.mention}**
 """,                    )
             await hmm.delete()
             await m.reply(                f"➕ يضيف {lmt} أغنية في قائمة الانتظار \n• ارسل {HNDLR}التشغيل_التلقائي لاضاف اغنيه في القائمه الانتضار**"            )
