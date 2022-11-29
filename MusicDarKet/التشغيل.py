@@ -67,7 +67,7 @@ async def ytdl(link):
     else:
         return 0, stderr.decode()
 
-@Client.on_message(filters.command(["تشغيل"], prefixes=f"{HNDLR}"))
+@Client.on_message(filters.command(["ش"], prefixes=f"{HNDLR}"))
 async def play(client, m: Message):
     replied = m.reply_to_message
     chat_id = m.chat.id
@@ -75,7 +75,7 @@ async def play(client, m: Message):
     if replied:
         if replied.audio or replied.voice:
             await m.delete()
-            huehue = await replied.reply("**🔄 جاري التشغيل والمعالجه **")
+            huehue = await replied.reply("**❤️‍🔥 𓏺يَتَمِ اެݪتَشِغِيَݪ  **")
             dl = await replied.download()
             link = replied.link
             if replied.audio:
@@ -172,7 +172,7 @@ async def vplay(client, m: Message):
     if replied:
         if replied.video or replied.document:
             await m.delete()
-            huehue = await replied.reply("**🔄 جاري التنزيل والمعالجه **")
+            huehue = await replied.reply("**❤️‍🔥 𓏺يَتَمِ اެݪتَشِغِيَݪ  **")
             dl = await replied.download()
             link = replied.link
             if len(m.command) < 2:
@@ -227,10 +227,10 @@ async def vplay(client, m: Message):
 
     else:
         if len(m.command) < 2:
-            await m.reply(                "**الرد على ملف صوتي أو إعطاء شيء للبحث**"            )
+            await m.reply(                "**𓏺اެݪࢪدَ عَݪى مِݪفَ صِۅٛتَيَ اެۅٛ اެعَطَاެء شِيَء ݪݪبَحِثَ ❤️‍🔥**"            )
         else:
             await m.delete()
-            huehue = await m.reply("**🔎 جاري البحث ")
+            huehue = await m.reply("**𓏺جَـاެࢪيَ اެݪبَحِـثَ ❤️‍🔥 ")
             query = m.text.split(None, 1)[1]
             search = ytsearch(query)
             Q = 720
@@ -274,7 +274,7 @@ async def vplay(client, m: Message):
                             await huehue.edit(f"`{ep}`")
 
 
-@Client.on_message(filters.command(["اغنيه عشوائية"], prefixes=f"{HNDLR}"))
+@Client.on_message(filters.command(["عشوائي"], prefixes=f"{HNDLR}"))
 async def playfrom(client, m: Message):
     chat_id = m.chat.id
     if len(m.command) < 2:
@@ -289,7 +289,7 @@ async def playfrom(client, m: Message):
             limit = 10
             lmt = 9
         await m.delete()
-        hmm = await m.reply(f"🔎 يأخذ {limit} أغنية عشوائية من {chat}**")
+        hmm = await m.reply(f"🌵 يأخذ {limit} أغنية عشوائية من {chat}**")
         try:
             async for x in bot.search_messages(chat, limit=limit, filter="audio"):
                 location = await x.download()
@@ -335,7 +335,7 @@ async def playlist(client, m: Message):
                 QUE = QUE + "\n" + f"**#{x}** - [{hmm}]({hmmm}) | `{hmmmm}`\n"
             await m.reply(QUE, disable_web_page_preview=True)
     else:
-        await m.reply("**❌ لايوجد هناك تشغيل تالي**")
+        await m.reply("**𓏺مِعَݪيَشِ مِاެفَيَ شِيَ مِشِتَغِݪ 🌵.**")
 @Client.on_message(filters.command(["التالي"], prefixes=f"{HNDLR}"))
 @authorized_users_only
 async def skip(client, m: Message):
@@ -344,11 +344,11 @@ async def skip(client, m: Message):
     if len(m.command) < 2:
         op = await skip_current_song(chat_id)
         if op == 0:
-            await m.reply("**❌ لا يوجد شيء في قائمة الانتظار لتخطيه !**")
+            await m.reply("**𓏺مِعَݪيَشِ مِاެفَيَ شِيَ مِشِتَغِݪ ݪتَخِطَيَ ،**")
         elif op == 1:
             await m.reply("قائمة انتظار فارغة ، مغادرة الدردشة الصوتية**")
         else:
-            await m.reply(                f"**⏭ تخطي التشغيل ** \n**🎧 التشغيل الان** - [{op[0]}]({op[1]}) | `{op[2]}`",                disable_web_page_preview=True,            )
+            await m.reply(                f"**تخطي التشغيل ** \n**🎧 التشغيل الان** - [{op[0]}]({op[1]}) | `{op[2]}`",                disable_web_page_preview=True,            )
     else:
         skip = m.text.split(None, 1)[1]
         OP = "**🗑️ تمت إزالة الأغاني التالية من قائمة الانتظار : -**"
@@ -367,7 +367,7 @@ async def skip(client, m: Message):
             await m.reply(OP)
 
 
-@Client.on_message(filters.command(["انهاء", "ايقاف"], prefixes=f"{HNDLR}"))
+@Client.on_message(filters.command(["ك", "ت"], prefixes=f"{HNDLR}"))
 @authorized_users_only
 async def stop(client, m: Message):
     await m.delete()
@@ -376,11 +376,11 @@ async def stop(client, m: Message):
         try:
             await call_py.leave_group_call(chat_id)
             clear_queue(chat_id)
-            await m.reply("**✅ تم ايقاف التشغيل بنجاح **")
+            await m.reply("**𓏺تَمِ تَخِطَيَ اެݪتَشِغِيَݪ بَنِجَاެحِ ❤️‍🔥**")
         except Exception as e:
             await m.reply(f"**هناك خطأ ** \n`{e}`")
     else:
-        await m.reply("**❌ لايوجد هناك اغنيه شغاله !**")
+        await m.reply("**𓏺مِعَݪيَشِ مِاެفَيَ شِيَ مِشِتَغِݪ 🌵.**")
 @Client.on_message(filters.command(["استئناف"], prefixes=f"{HNDLR}"))
 @authorized_users_only
 async def pause(client, m: Message):
