@@ -18,7 +18,7 @@ async def song(client, message: Message):
     if not urlissed:
         await client.send_message(            message.chat.id,            "صيغة الأمر غير صالحة!",        )
         return
-    pablo = await client.send_message(message.chat.id, f"**🔎 جاري تحميل ** `{urlissed}`")
+    pablo = await client.send_message(message.chat.id, f"**𓏺جَاެࢪيَ اެݪتَحِمِيَݪ ❤️‍🔥. ** `{urlissed}`")
     search = SearchVideos(f"{urlissed}", offset=1, mode="dict", max_results=1)
     mi = search.result()
     mio = mi["search_result"]
@@ -39,7 +39,7 @@ async def song(client, message: Message):
         return
     c_time = time.time()
     capy = f"""
-**🏷️ اسم الاغنيه :** [{thum}]({mo})
+**🏷️ 𓏺اެسِمِ اެݪاެغِنِيَة :** [{thum}]({mo})
 **🎧 طلب من :** {message.from_user.mention}
 """
     file_stark = f"{ytdl_data['id']}.mp3"
